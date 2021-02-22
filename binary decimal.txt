@@ -1,0 +1,424 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+static int sayac = 0;
+static int sayac2 = 0;
+static int sayac3 = 0;
+static int sayac4 = 0;
+static int sayac5 = 0;
+static int sayac6 = 0;
+static int kont = 0;
+static int kont2 = 0;
+static int kont3 = 0;
+static int kont4 = 0;
+static int kalan[50];
+static int kalan2[50];
+static int kalan3[50];
+static int kalan4[50];
+static int kalan5[50];
+static int kalan6[50];
+static int kalan7[50];
+static float kalan8[50];
+static int us = 0;
+static long int toplam = 0;
+static int us2 = -1;
+static long double toplam2 = 0;
+static long int bas, sonuc;
+static long int bas2, sonuc2;
+static int basamak = 0;
+
+
+
+double onlukto2(float a)
+{
+	if ((float)a - (int)a == 0)
+	{
+		if (a == 1)
+		{
+			kalan[sayac] = 1;
+			for (int i = sayac; i >= 0; i--)
+			{
+				cout << kalan[i] << " ";
+			}
+			return 1;
+		}
+		else
+		{
+			int temp = (int)a % 2;
+			kalan[sayac] = temp;
+			sayac++;
+		}
+
+		return onlukto2((int)(a / 2));
+	}
+}
+double onlukto2b(float b)
+{
+
+	if ((float)b - (int)b == 0)
+	{
+		kalan2[sayac2] = 1;
+
+		if (kont != 2)
+		{
+			cout << 0 << ".";
+		}
+		for (int i = 0; i < sayac2; i++)
+		{
+			if (i == 0)
+			{
+				cout << "." << kalan2[i] << " ";
+			}
+			else
+			{
+				cout << kalan2[i] << " ";
+			}
+		}
+		return 1;
+	}
+	else
+	{
+		b *= 2;
+		float temp2 = b;
+		kalan2[sayac2] = (int)temp2;
+		sayac2++;
+	}
+	return onlukto2b((float)b - (int)b);
+
+}
+double onlukto8(float a)
+{
+	if ((float)a - (int)a == 0)
+	{
+		if (a < 8)
+		{
+			kalan3[sayac3] = a;
+			for (int i = sayac3; i >= 0; i--)
+			{
+				cout << kalan3[i] << " ";
+			}
+			return 1;
+		}
+		else
+		{
+			int temp3 = (int)a % 8;
+			kalan3[sayac3] = temp3;
+			sayac3++;
+		}
+		return onlukto8((int)(a / 8));
+	}
+}
+double onlukto8b(float b)
+{
+	if ((float)b - (int)b == 0)
+	{
+		kalan4[sayac4] = (int)b;
+
+		if (kont2 != 2)
+		{
+			cout << 0 << ".";
+		}
+
+		for (int i = 0; i < sayac4; i++)
+		{
+			if (i == 0)
+			{
+				cout << "." << kalan4[i] << " ";
+			}
+			else
+			{
+				cout << kalan4[i] << " ";
+			}
+		}
+		return 1;
+	}
+	else
+	{
+		b *= 8;
+		float temp4 = (int)b;
+		kalan4[sayac4] = temp4;
+		sayac4++;
+	}
+	return onlukto8b((float)b - (int)b);
+}
+double onlukto16(float a)
+{
+	if ((float)a - (int)a == 0)
+	{
+		if (a < 16)
+		{
+			kalan5[sayac5] = a;
+
+			for (int i = sayac5; i >= 0; i--)
+			{
+				if (kalan5[i] == 10)
+				{
+					cout << "A" << " ";
+				}
+				else if (kalan5[i] == 11)
+				{
+					cout << "B" << " ";
+				}
+				else if (kalan5[i] == 12)
+				{
+					cout << "C" << " ";
+				}
+				else if (kalan5[i] == 13)
+				{
+					cout << "D" << " ";
+				}
+				else if (kalan5[i] == 14)
+				{
+					cout << "E" << " ";
+				}
+				else if (kalan5[i] == 15)
+				{
+					cout << "F" << " ";
+				}
+				else
+				{
+					cout << kalan5[i] << " ";
+				}
+
+			}
+			return 1;
+		}
+		else
+		{
+			int temp5 = (int)a % 16;
+			kalan5[sayac5] = temp5;
+			sayac5++;
+		}
+		return onlukto16((int)(a / 16));
+	}
+}
+double onlukto16b(float b)
+{
+	if ((float)b - (int)b == 0)
+	{
+		kalan6[sayac6] = (int)b;
+
+		if (kont3 != 2)
+		{
+			cout << 0 << ".";
+		}
+		else
+		{
+			cout << ".";
+		}
+
+		for (int i = 0; i < sayac6; i++)
+		{
+			if (kalan6[i] == 10)
+			{
+				cout << "A" << " ";
+			}
+			else if (kalan6[i] == 11)
+			{
+				cout << "B" << " ";
+			}
+			else if (kalan6[i] == 12)
+			{
+				cout << "C" << " ";
+			}
+			else if (kalan6[i] == 13)
+			{
+				cout << "D" << " ";
+			}
+			else if (kalan6[i] == 14)
+			{
+				cout << "E" << " ";
+			}
+			else if (kalan6[i] == 15)
+			{
+				cout << "F" << " ";
+			}
+			else
+			{
+				cout << kalan6[i] << " ";
+			}
+		}
+		return 1;
+	}
+	else
+	{
+		b *= 16;
+		float temp6 = (int)b;
+		kalan6[sayac6] = temp6;
+		sayac6++;
+	}
+	return onlukto16b((float)b - (int)b);
+
+
+
+
+}
+double ikilikto10(long int a)
+{
+	
+
+	if ((int)a == 0)
+	{
+		return toplam;
+	}
+	else if ((int)a != 0)
+	{
+		
+		for (int i = 0; i < 50; i++)
+		{
+			
+			bas = a % 10;
+			kalan7[i] = bas * pow(2, us);
+			toplam += kalan7[i];
+			us++;
+			return ikilikto10((int)(a / 10));
+		}
+	}
+}
+double ikilikto10b(int b)
+{
+	
+	if ((int)b == 0)
+	{
+		return toplam2;
+	}
+	else if ((int)b != 0)
+	{
+		for (int i = 0; i < 50; i++)
+		{
+			
+			bas2 = b % 10; // sıkıntı var
+			kalan8[i] = bas2 * pow(2, -basamak);
+			toplam2 += kalan8[i];
+			basamak--;
+			
+		
+			return ikilikto10b((int)(b / 10));
+		}
+		
+	}
+}
+
+int main()
+{
+	int tercih;
+	cout << "10 --> 2 icin 1'e basiniz" << endl;
+	cout << "10 --> 8 icin 2'e basiniz" << endl;
+	cout << "10 --> 16 icin 3'e basiniz" << endl;
+	cout << "2 --> 10 icin 4'e basiniz" << endl;
+	cout << "\ngiris: ";
+	cin >> tercih;
+
+	switch (tercih)
+	{
+	case 1:
+
+		float x;
+		cout << "10'luk --> 2'lik taban: ";
+		cin >> x;
+		cout << endl;
+
+		if ((int)x > 0)
+		{
+			kont++;
+			onlukto2((int)x);
+		}
+		if ((float)x - (int)x != 0)
+		{
+			kont++;
+			onlukto2b((float)x - (int)x);
+		}
+		cout << endl;
+		break;
+
+	case 2:
+
+		float y;
+		cout << "10'luk --> 8'lik taban: ";
+		cin >> y;
+		cout << endl;
+
+		if ((int)y > 0)
+		{
+			kont2++;
+			onlukto16((int)y);
+		}
+		if ((float)y - (int)y != 0)
+		{
+			kont2++;
+			onlukto8b((float)y - (int)y);
+		}
+		cout << endl;
+		break;
+
+	case 3:
+
+		float z;
+		cout << "10'luk --> 16'lik taban: ";
+		cin >> z;
+		cout << endl;
+
+		if ((int)z > 0)
+		{
+			kont3++;
+			onlukto16((int)z);
+		}
+		if ((float)z - (int)z != 0)
+		{
+			kont3++;
+			onlukto16b((float)z - (int)z);
+		}
+		cout << endl;
+		break;
+
+	case 4:
+
+		double n;
+		cout << "2'lik --> 10'luk taban: ";
+		cin >> n;
+		cout << endl;
+
+		if ((int)n > 0)
+		{
+			static long int  toplam = ikilikto10((int)n);
+
+			/*if ((double)n - (int)n == 0)
+			{
+				cout << toplam;
+			}
+			else
+			{
+				cout << toplam;
+			}*/
+
+		}
+		
+		//if ((double)n - (int)n != 0)
+		//{
+			 float temp = (double)n - (int)n;
+
+			for(int i=0;i<50;i++)
+			{
+				 temp *=10;
+				 basamak++;
+				 
+				
+				if ((double)temp - (int)temp == 0)
+				{
+					break;
+				}
+
+			}
+			static long double toplam2= ikilikto10b(temp);
+			cout << toplam2 + toplam;
+			cout<<endl;
+		//}
+		
+		break;
+
+	}
+
+	return 0;
+}
